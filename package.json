@@ -1,0 +1,30 @@
+{
+  "name": "pwa-posta",
+  "version": "1.0.0",
+  "description": "pwa para http://www.lagacetasalta.com.ar/posta",
+  "main": "source/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloscba/pwa-posta.git"
+  },
+  "keywords": [
+    "pwa"
+  ],
+  "author": "carloscba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carloscba/pwa-posta/issues"
+  },
+  "homepage": "https://github.com/carloscba/pwa-posta#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-watch": "^4.3.11",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "reactify": "^1.1.1"
+  }
+}
