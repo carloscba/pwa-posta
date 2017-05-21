@@ -2,24 +2,24 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var MenuComponent = require('./MenuComponent');
+var ArticleComponent = require('./ArticleComponent');
 
 var App = React.createClass({
     
     getInitialState : function(){
         return {
             data : [],
-            schedule : [],
         }
     },
 
     componentDidMount : function(){
-        /*
-        $.get('./', function(results){
+        $.get('./data/data.json', function(results){
+            console.log(results);
             this.setState({
-                schedule: results[0].data
+                data: results
             })
         }.bind(this))
-        */
+
     },
 
     componentWillUnmount : function(){
@@ -30,7 +30,15 @@ var App = React.createClass({
         return(
             <div>
                 <MenuComponent />
-                React
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12">
+                            
+                            <ArticleComponent data={ this.state.data } />
+                        </div>
+                    </div>
+
+                </div>
             </div>
         )
     } 

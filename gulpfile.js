@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var browserify = require('gulp-browserify');
+var webserver = require('gulp-webserver');
 
 var src = './source';
 var app = './public';
@@ -29,4 +30,17 @@ gulp.task('watch', function () {
     gulp.watch(src + '/js/*.js', ['js']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('webserver', function() {
+  gulp.src(app)
+    .pipe(webserver({
+      livereload: false,
+      directoryListing: {
+        enable:true,
+        path: app
+      },
+      open: true,
+      port : 3003,
+    }));
+});
+
+gulp.task('default', ['watch','webserver']);
