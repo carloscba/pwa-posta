@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var watch = require('gulp-watch');
 var browserify = require('gulp-browserify');
 var webserver = require('gulp-webserver');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 var src = './source';
 var app = './public';
@@ -22,6 +24,15 @@ gulp.task('js', function(){
         console.log('Error: ', err.message);
     })
     .pipe(gulp.dest( app + '/js' ));
+});
+
+gulp.task('js-compress',['js'], function () {
+  pump([
+        gulp.src(src + 'js/*.js'),
+        uglify(),
+        gulp.dest( app + '/dist/js')
+    ]
+  );
 });
 
 gulp.task('watch', function () {  
