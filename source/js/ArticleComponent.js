@@ -1,17 +1,16 @@
-var React = require('react');
+import { Component } from 'react'
 
-module.exports = React.createClass({
+export class ArticleComponent extends Component{
     
-    onClickHandler : function(article){
-        this.props.onClick(article)
-    },
-
-    render : function(){
+    onClickHandler = function(){
+        //this.props.onClick(article)
+    }
+    render = function(){
 
         var articleLayout = this.props.data.map(function(article, index){
             return (
                 <article key={ index }>
-                    <h2><a href="#" article={ article } onClick={ this.onClickHandler }>{ article.title }</a></h2>
+                    <h2><a href="#" onClick={ this.onClickHandler }>{ article.title }</a></h2>
                     <p>{ article.resume }</p>
                 </article>
             )
@@ -24,4 +23,4 @@ module.exports = React.createClass({
             </div>
         )
     }
-})
+}

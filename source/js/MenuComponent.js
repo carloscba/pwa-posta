@@ -1,8 +1,8 @@
-var React = require('react');
+import { Component } from 'react'
 
-module.exports = React.createClass({
-  
-    render : function(){
+export class MenuComponent extends Component{
+     
+    render = function(){
           return (
             <div>
                 <nav className="navbar navbar-default">
@@ -27,4 +27,4 @@ module.exports = React.createClass({
             </div>
         )
     }
-})
+}
