@@ -7,8 +7,6 @@ class ArticleComponent extends Component {
     }
     render = function(){
         
-        console.log(this.props.data);
-
         var articleLayout = this.props.data.map(function(article, index){
             return (
                 <article key={ index }>

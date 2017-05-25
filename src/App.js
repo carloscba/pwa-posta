@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import MenuComponent from './MenuComponent';
 import ArticleComponent from './ArticleComponent';
 import jQuery from 'jquery';
-import 'bootstrap';
-
 
 class App extends Component {
 
